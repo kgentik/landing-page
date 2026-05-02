@@ -34,10 +34,24 @@ const { Content } = await render(post);
           </p>
           <h1 class="mb-6 font-display text-display text-primary">{post.data.title}</h1>
           <p class="text-body-lg text-on-surface-variant">{post.data.description}</p>
+          <div class="mt-6 flex flex-wrap gap-2">
+            {post.data.tags.map((tag) => <span class="rounded-full bg-secondary-container/20 px-3 py-1 text-xs font-bold text-secondary">{tag}</span>)}
+          </div>
         </header>
-        <div class="prose prose-lg max-w-none prose-headings:font-display prose-headings:text-primary prose-a:text-secondary">
-          <Content />
+        <div class="rounded-3xl border border-outline-variant bg-white p-6 shadow-sm sm:p-10">
+          <div class="prose prose-lg max-w-none prose-headings:font-display prose-headings:text-primary prose-a:text-secondary prose-strong:text-primary">
+            <Content />
+          </div>
         </div>
+        <aside class="mt-10 rounded-3xl bg-primary-container p-6 text-white sm:p-8">
+          <h2 class="mb-3 text-h2">Want every local enquiry to get a next step?</h2>
+          <p class="mb-6 text-on-primary-container">
+            kgentik helps local businesses automate lead capture, quote follow-up, reviews, and marketing operations.
+          </p>
+          <a class="inline-flex rounded-2xl bg-secondary-container px-6 py-3 font-bold text-primary" href="/#pricing">
+            Book a free demo
+          </a>
+        </aside>
       </div>
     </article>
   </main>
