@@ -1,0 +1,76 @@
+---
+const plans = [
+  {
+    name: 'Solo',
+    description: 'For solo trades starting out.',
+    price: '$149',
+    cta: 'Get Started',
+    features: ['Lead Agent (Google/SMS)', 'Unified Intelligent Inbox', 'Review Automation'],
+  },
+  {
+    name: 'Growth',
+    description: 'For scaling service teams.',
+    price: '$299',
+    cta: 'Start 14-day Trial',
+    featured: true,
+    features: ['4 Specialized Agents', 'Quote Tracking & Follow-up', 'Local Marketing Engine'],
+  },
+  {
+    name: 'Enterprise',
+    description: 'For multi-van businesses.',
+    price: '$599',
+    cta: 'Contact Sales',
+    features: ['All 8 Specialized Agents', 'Paid Ads Management', 'Custom CRM Integrations'],
+  },
+];
+---
+
+<section class="section-y bg-surface-container-low" id="pricing">
+  <div class="site-container">
+    <div class="mb-12 text-center sm:mb-16">
+      <h2 class="mb-4 font-display text-display text-primary">Transparent local pricing.</h2>
+      <p class="text-body-lg text-on-surface-variant">Choose the plan that fits your business stage.</p>
+    </div>
+    <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+      {
+        plans.map((plan) => (
+          <article
+            class:list={[
+              'relative flex flex-col rounded-2xl border p-8 sm:p-10',
+              plan.featured
+                ? 'z-10 border-secondary-container bg-primary-container text-white shadow-2xl md:scale-105'
+                : 'border-outline-variant bg-white text-primary',
+            ]}
+          >
+            {plan.featured && <div class="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-secondary-container px-4 py-1 text-[10px] font-bold uppercase tracking-widest text-primary">Most Popular</div>}
+            <h3 class="mb-2 text-xl font-bold">{plan.name}</h3>
+            <p class:list={['mb-8', plan.featured ? 'text-on-primary-container' : 'text-on-surface-variant']}>{plan.description}</p>
+            <div class="mb-8 flex items-baseline gap-1">
+              <span class="font-display text-display">{plan.price}</span>
+              <span class={plan.featured ? 'text-on-primary-container' : 'text-on-surface-variant'}>/mo</span>
+            </div>
+            <ul class="mb-10 flex-grow space-y-4">
+              {
+                plan.features.map((feature) => (
+                  <li class:list={['flex items-center gap-3 text-sm', plan.featured && 'text-on-primary-container']}>
+                    <span class:list={['material-symbols-outlined text-lg', plan.featured ? 'text-secondary-container' : 'text-secondary']}>check_circle</span>
+                    {feature}
+                  </li>
+                ))
+              }
+            </ul>
+            <a
+              href="#pricing"
+              class:list={[
+                'w-full rounded-xl py-3 text-center font-bold transition-all',
+                plan.featured ? 'bg-secondary-container py-4 text-primary hover:brightness-110' : 'border border-primary text-primary hover:bg-surface-container',
+              ]}
+            >
+              {plan.cta}
+            </a>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

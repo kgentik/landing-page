@@ -1,0 +1,59 @@
+---
+const painPoints = [
+  {
+    icon: 'alarm_off',
+    title: 'Slow Response Kills Deals',
+    description: "If you don't reply within 5 minutes, they've already messaged the next guy on Google.",
+  },
+  {
+    icon: 'inventory_2',
+    title: 'Quotes Vanish Into Thin Air',
+    description: "Most trades send a quote and never follow up. That's money left on the table.",
+  },
+];
+---
+
+<section class="section-y bg-white">
+  <div class="site-container grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-24">
+    <div>
+      <h2 class="mb-8 font-display text-display text-primary">Admin isn't your job. The trade is.</h2>
+      <p class="mb-10 text-body-lg text-on-surface-variant lg:mb-12">
+        You're losing 30% of your potential revenue because follow-up is impossible when you're busy. kgentik replaces
+        the "I'll reply tonight" stress with "It's already handled."
+      </p>
+      <div class="space-y-6">
+        {
+          painPoints.map((point) => (
+            <article class="flex items-start gap-4 rounded-2xl border border-outline-variant bg-surface-container-low p-6">
+              <span class="material-symbols-outlined mt-1 text-error">{point.icon}</span>
+              <div>
+                <h3 class="mb-1 font-bold text-primary">{point.title}</h3>
+                <p class="text-sm text-on-surface-variant">{point.description}</p>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+
+    <div class="relative rounded-3xl border border-outline-variant bg-surface p-6 sm:p-8">
+      <div class="space-y-4">
+        <div class="-rotate-1 rounded-xl border border-outline-variant bg-white p-4 shadow-lg">
+          <div class="mb-2 flex items-center justify-between gap-3">
+            <span class="text-[10px] font-bold text-zinc-400">UNREAD - 2 HOURS AGO</span>
+            <span class="rounded bg-red-100 px-2 py-0.5 text-[10px] font-bold uppercase text-red-600">Cold Lead</span>
+          </div>
+          <p class="text-sm font-semibold text-primary">"Need a quote for a new consumer unit ASAP."</p>
+        </div>
+        <div class="rotate-2 rounded-xl border border-outline-variant bg-white p-4 shadow-lg">
+          <p class="text-sm font-semibold italic text-zinc-400">
+            "Sent 3 quotes yesterday. 0 replies. 0 follow-ups scheduled."
+          </p>
+        </div>
+        <div class="pt-8 text-center">
+          <p class="text-lg font-bold text-secondary">Stop the leak. Build a system.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

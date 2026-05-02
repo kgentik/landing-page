@@ -1,0 +1,61 @@
+---
+const industries = [
+  {
+    name: 'Plumbers',
+    description: "Emergency calls handled 24/7 while you're on site.",
+    alt: 'Plumber',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA1gRQLB4WbMWJUDUojV6EPQx6NsIWBSvXkHinKEPK1Upb6LigG-rGvThoMUiTnZaPvq-XgWDOeOs2n73yGaEM8GZyzS3mERq5cmzhzNP_33seS5qe-aznUv2EC1VMHpnEhCQktX5Jav1VHX6rrPvE4QoKrJg-omNPxHCYbK0XAXVihzHiFbfCF3LYmq9-lHULvgKWSmuaigc7vse4YQ358QAiK1ZYowOQ_cIaUZf-85Kx3Te7gsv7QDm7dOUYonZZwyobK4CWMCA7O',
+  },
+  {
+    name: 'Electricians',
+    description: 'Instant quote drafting for rewire and EV charger leads.',
+    alt: 'Electrician',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD8WJvVH5Yl8lBAcVlpKmQ6H7bAevWZa2LUssKvVVPESWe8-C6Dh17M6ov_bQCLQzvYK95EySMwH4RTg8a1M9TWSbgChV3sGB9RnU_5dO64o7kCiR0q6NdHEnC4KZ5WkqG0gvEZdKB1PN3we2eJ9RUo47iGg3FtK32My1hWBmQ628VOatJ8LLgfAYfcLZWbdtT_wDeGaMFnBjbdVWi-b40t6UfV1oey_eLs04XaSmHvNkdQwfOxF0VBJppQt0SeEoEmNk4bkON_d4TW',
+  },
+  {
+    name: 'Builders',
+    description: 'Project follow-ups that keep leads warm during long sales cycles.',
+    alt: 'Builder',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBUJd82GJ1M9RmkMV4hXo3K_jsSEuyqkcnDEL0A9iB70GXkV1FF1WmtqWgXQOFh829DhTy0w7KM5pwV3Sa2BWQC_VuTg3b4nBhj3alpiQmdhn7ZZhufY1OALSCDCfM-b4RGCwajhiFRU1PIRLz52GNy8v383TG4bbW9kFOKkHivhDqGkDfymLNps0nL9ZVBl0WO2uP8WgJ9DY9XAE7oSGzf8uUhiqePq9pAbWij1EYhioYZ9ArNMaC1vF-4ePBZ0weQv3107lUf4x5s',
+  },
+  {
+    name: 'HVAC',
+    description: 'Booking seasonal maintenance calls on autopilot.',
+    alt: 'HVAC',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCBLUbnL-Lk0jmS_shRHrD_ZyZ6GZwE1Tr_LEUyOqcng5ZlucACMPfwiCyNtVMvoPYKFQVnW-1o7-Rv9Qe0GHxtNptdXtdSK7nlISypDR68h7auCTwuD4TVGcjFBbhjQ-38GTUcacfIV9etzznyHxszfm8KgzrtytB4TFy4O2tbUxultZo2dqMEaCCAIoqNqY-YaWCP_sE8A7W3sAuehXWb9euzpR_51f3FRfC8ql6Kgkm2X9ahpd-5INl4bLUqJoimFog-KE_k_Hn0',
+  },
+];
+---
+
+<section class="section-y bg-surface" id="industries">
+  <div class="site-container">
+    <div class="mb-12 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+      <div class="max-w-2xl">
+        <span class="eyebrow mb-4 block text-secondary">Tailored Intelligence</span>
+        <h2 class="font-display text-h1 text-primary sm:text-[40px]">
+          Specialized for the trades that build and fix our world.
+        </h2>
+      </div>
+      <div class="hidden gap-2 sm:flex" aria-hidden="true">
+        <span class="rounded-full border border-outline-variant p-3"><span class="material-symbols-outlined">chevron_left</span></span>
+        <span class="rounded-full border border-outline-variant bg-primary-container p-3 text-white"><span class="material-symbols-outlined">chevron_right</span></span>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      {
+        industries.map((industry) => (
+          <article class="group overflow-hidden rounded-2xl border border-outline-variant bg-white transition-all hover:shadow-lg">
+            <div class="h-48 overflow-hidden">
+              <img alt={industry.alt} class="h-full w-full object-cover transition-transform group-hover:scale-105" src={industry.image} />
+            </div>
+            <div class="p-6">
+              <h3 class="mb-2 text-h2 text-primary">{industry.name}</h3>
+              <p class="text-on-surface-variant">{industry.description}</p>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

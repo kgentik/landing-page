@@ -1,0 +1,80 @@
+---
+const cards = [
+  {
+    icon: 'search_check',
+    title: 'Organic Dominance',
+    description: "We manage your Google Business Profile, collect fresh reviews, and post project updates to ensure you're the first choice on the map.",
+    iconClass: 'bg-primary-container text-white',
+    rows: [
+      ['Optimize "Emergency Plumber" keywords', 'Complete', 'text-green-600'],
+      ['Geo-tagging project photos', 'Running', 'text-blue-600'],
+    ],
+  },
+  {
+    icon: 'ads_click',
+    title: 'Hyper-Local Ads',
+    description: 'AI-managed Local Service Ads that target high-intent customers in your specific postcode. We stop spending when your calendar is full.',
+    iconClass: 'bg-secondary-container text-primary',
+    rows: [
+      ['Postcode BS8 Targeted Ads', '8.4x ROI', 'text-green-600'],
+      ['"New Boiler" Lead Gen', '12 Leads/wk', 'text-green-600'],
+    ],
+  },
+];
+---
+
+<section class="section-y bg-inverse-on-surface">
+  <div class="site-container">
+    <div class="mb-12 text-center sm:mb-16">
+      <h2 class="mb-4 font-display text-display text-primary">Not just replies. Real marketing direction.</h2>
+      <p class="mx-auto max-w-2xl text-body-lg text-on-surface-variant">
+        Your OS identifies where your best jobs are coming from and automatically suggests where to push harder.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
+      {
+        cards.map((card) => (
+          <article class="rounded-2xl border border-outline-variant bg-white p-6 shadow-sm sm:p-10">
+            <div class:list={['mb-6 flex h-12 w-12 items-center justify-center rounded-xl', card.iconClass]}>
+              <span class="material-symbols-outlined">{card.icon}</span>
+            </div>
+            <h3 class="mb-4 text-h2 text-primary">{card.title}</h3>
+            <p class="mb-8 text-on-surface-variant">{card.description}</p>
+            <div class="space-y-3 opacity-70">
+              <div class="flex items-center justify-between gap-4 border-b pb-2 text-xs font-bold uppercase">
+                <span>Strategy Task</span>
+                <span>Status</span>
+              </div>
+              {
+                card.rows.map(([task, status, color]) => (
+                  <div class="flex items-center justify-between gap-4 text-sm">
+                    <span>{task}</span>
+                    <span class:list={['font-bold uppercase', color]}>{status}</span>
+                  </div>
+                ))
+              }
+            </div>
+          </article>
+        ))
+      }
+    </div>
+    <div class="mt-12 rounded-3xl bg-primary-container p-6 text-white sm:p-8">
+      <div class="flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
+        <div class="flex flex-col gap-5 sm:flex-row sm:items-center sm:gap-6">
+          <div class="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-full bg-secondary-container text-primary">
+            <span class="material-symbols-outlined text-3xl">board_lamp</span>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold">Marketing Strategy Board</h3>
+            <p class="text-sm opacity-60">
+              Insight: Heating leads are 40% cheaper this week. Recommended action: Increase budget by $50.
+            </p>
+          </div>
+        </div>
+        <button class="whitespace-nowrap rounded-xl bg-secondary-container px-8 py-3 font-bold text-primary transition-all hover:brightness-110">
+          Apply Strategy
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

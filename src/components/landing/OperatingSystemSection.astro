@@ -1,0 +1,58 @@
+---
+const benefits = [
+  { icon: 'inbox', title: 'Unified Inbox', description: 'SMS, Email, and Google Chats in one timeline.' },
+  { icon: 'history', title: 'Timeline View', description: 'See the full history of every customer interaction.' },
+];
+---
+
+<section class="section-y bg-inverse-on-surface">
+  <div class="site-container">
+    <div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
+      <div>
+        <h2 class="mb-6 font-display text-display text-primary">One operating system for the digital side.</h2>
+        <p class="mb-10 text-body-lg text-on-surface-variant">
+          Stop jumping between WhatsApp, Gmail, and Google Maps. kgentik pulls everything into a single intelligent view
+          where AI helps you respond instantly.
+        </p>
+        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+          {
+            benefits.map((benefit) => (
+              <div>
+                <div class="mb-2 flex items-center gap-3 font-bold text-primary">
+                  <span class="material-symbols-outlined text-secondary">{benefit.icon}</span>
+                  <span>{benefit.title}</span>
+                </div>
+                <p class="text-xs text-on-surface-variant">{benefit.description}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <div class="relative rounded-3xl border border-outline-variant bg-white p-6 shadow-xl sm:p-8">
+        <div class="mb-6 flex items-center justify-between border-b border-outline-variant pb-4">
+          <div class="flex items-center gap-3">
+            <div class="flex h-10 w-10 items-center justify-center rounded-full bg-zinc-100">
+              <span class="material-symbols-outlined">person</span>
+            </div>
+            <div>
+              <p class="text-sm font-bold">Mark Stevenson</p>
+              <p class="text-[10px] uppercase text-zinc-500">Boiler Install Lead</p>
+            </div>
+          </div>
+          <span class="rounded-full bg-secondary-container/20 px-2 py-0.5 text-[10px] font-bold uppercase text-secondary">In Progress</span>
+        </div>
+        <div class="space-y-4">
+          <div class="rounded-xl border border-outline-variant bg-surface-container-low p-4 text-sm">
+            "Hi Mark, I've seen your boiler photos. Looking at our calendar, we can get an engineer out Tuesday between
+            9-11am. Does that work?"
+            <p class="mt-2 text-[10px] text-zinc-400">Agent Draft - 2m ago</p>
+          </div>
+          <div class="flex justify-end">
+            <button class="rounded-lg bg-primary px-4 py-2 text-xs font-bold text-white">Approve & Send</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

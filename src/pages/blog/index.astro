@@ -1,0 +1,60 @@
+---
+export const prerender = true;
+
+import { getCollection } from 'astro:content';
+import Footer from '../../components/landing/Footer.astro';
+import Header from '../../components/landing/Header.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const posts = (await getCollection('blog'))
+  .filter((post) => !post.data.draft)
+  .sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf());
+---
+
+<BaseLayout
+  title="Blog | kgentik"
+  description="Practical notes on agentic sales, marketing, automation, and digital operations for local businesses."
+>
+  <Header />
+  <main class="bg-surface">
+    <section class="section-y">
+      <div class="site-container">
+        <div class="mx-auto max-w-3xl text-center">
+          <span class="eyebrow mb-4 block text-secondary">Kgentik Blog</span>
+          <h1 class="mb-6 font-display text-display text-primary">Playbooks for agent-powered local business growth.</h1>
+          <p class="text-body-lg text-on-surface-variant">
+            Soon this will host guides, field notes, and implementation ideas for local businesses using agents across
+            sales, marketing, reviews, and digital operations.
+          </p>
+        </div>
+
+        <div class="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
+          {
+            posts.length > 0 ? (
+              posts.map((post) => (
+                <article class="rounded-2xl border border-outline-variant bg-white p-6 shadow-sm">
+                  <p class="mb-3 text-xs font-bold uppercase tracking-widest text-secondary">
+                    {post.data.publishedAt.toLocaleDateString('en-AU', { day: 'numeric', month: 'short', year: 'numeric' })}
+                  </p>
+                  <h2 class="mb-3 text-h2 text-primary">
+                    <a class="hover:underline" href={`/blog/${post.id}/`}>{post.data.title}</a>
+                  </h2>
+                  <p class="text-on-surface-variant">{post.data.description}</p>
+                </article>
+              ))
+            ) : (
+              <div class="rounded-3xl border border-dashed border-outline-variant bg-white p-8 text-center md:col-span-2">
+                <h2 class="mb-3 text-h2 text-primary">Blog coming soon</h2>
+                <p class="mx-auto max-w-2xl text-on-surface-variant">
+                  The route is ready at <span class="font-bold text-primary">/blog</span>. Add Markdown or MDX files to
+                  <span class="font-bold text-primary"> src/content/blog</span> when you are ready to publish.
+                </p>
+              </div>
+            )
+          }
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>

@@ -1,0 +1,41 @@
+---
+export const prerender = true;
+
+import AgentsSection from '../components/landing/AgentsSection.astro';
+import ControlSection from '../components/landing/ControlSection.astro';
+import FinalCta from '../components/landing/FinalCta.astro';
+import Footer from '../components/landing/Footer.astro';
+import Header from '../components/landing/Header.astro';
+import HeroSection from '../components/landing/HeroSection.astro';
+import IndustriesSection from '../components/landing/IndustriesSection.astro';
+import MarketingSection from '../components/landing/MarketingSection.astro';
+import OperatingSystemSection from '../components/landing/OperatingSystemSection.astro';
+import PainPointsSection from '../components/landing/PainPointsSection.astro';
+import PricingSection from '../components/landing/PricingSection.astro';
+import QuoteManagementSection from '../components/landing/QuoteManagementSection.astro';
+import TestimonialsSection from '../components/landing/TestimonialsSection.astro';
+import WorkflowSection from '../components/landing/WorkflowSection.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="kgentik | Agentic OS for Local Business"
+  description="kgentik helps local trades and service businesses automate lead capture, quote tracking, follow-ups, reviews, and local marketing."
+>
+  <Header />
+  <main>
+    <HeroSection />
+    <IndustriesSection />
+    <WorkflowSection />
+    <OperatingSystemSection />
+    <PainPointsSection />
+    <AgentsSection />
+    <QuoteManagementSection />
+    <ControlSection />
+    <MarketingSection />
+    <TestimonialsSection />
+    <PricingSection />
+    <FinalCta />
+  </main>
+  <Footer />
+</BaseLayout>

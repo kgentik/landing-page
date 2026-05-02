@@ -1,0 +1,41 @@
+---
+const testimonials = [
+  {
+    quote: "Since using kgentik, I haven't answered a 'Where are you based?' text in 3 months. The AI does it, quotes it, and I just show up and work. My evenings are actually mine again.",
+    name: 'Dave Roberts',
+    company: 'Roberts Electrical',
+  },
+  {
+    quote: "The quote follow-up agent is worth the price alone. I used to forget to chase jobs. Now, it does it for me and I've seen a 20% increase in bookings just from that.",
+    name: 'Sarah Linn',
+    company: 'Squeaky Clean Pros',
+  },
+  {
+    quote: "It's like having a receptionist, a marketing manager, and a sales guy in my pocket. kgentik is the best investment I've made for my business.",
+    name: 'Tom Harrison',
+    company: 'Harrison Builds',
+  },
+];
+---
+
+<section class="section-y overflow-hidden bg-white">
+  <div class="site-container">
+    <h2 class="mb-12 text-center font-display text-h1 text-primary sm:mb-16 sm:text-[40px]">Trusted by 500+ local businesses.</h2>
+    <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+      {
+        testimonials.map((testimonial) => (
+          <figure class="rounded-2xl border border-outline-variant bg-surface-container-low p-8 italic text-on-surface-variant">
+            <blockquote>"{testimonial.quote}"</blockquote>
+            <figcaption class="mt-6 flex items-center gap-4 not-italic">
+              <div class="h-10 w-10 rounded-full bg-zinc-200"></div>
+              <div>
+                <p class="text-sm font-bold text-primary">{testimonial.name}</p>
+                <p class="text-[10px] font-bold uppercase text-zinc-500">{testimonial.company}</p>
+              </div>
+            </figcaption>
+          </figure>
+        ))
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,78 @@
+---
+const quoteTabs = [
+  { label: 'Drafted', count: 2, active: true },
+  { label: 'Sent', count: 5 },
+  { label: 'Viewed', count: 3 },
+];
+
+const quotes = [
+  { title: 'Bathroom Renovation', customer: 'Sarah Jenkins - Bristol', value: '$8,400', status: 'Ready to send' },
+  { title: 'Fuse Box Upgrade', customer: 'Mike Thompson - Clifton', value: '$650', status: 'Drafting...' },
+];
+
+const features = [
+  'Instant notifications when a quote is viewed.',
+  'Automated multi-channel follow-up.',
+  'Online acceptance and deposit collection.',
+];
+---
+
+<section class="section-y bg-surface">
+  <div class="site-container">
+    <div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-20">
+      <div class="relative order-2 lg:order-1">
+        <div class="overflow-hidden rounded-2xl border border-outline-variant bg-white p-6 shadow-xl sm:p-8">
+          <div class="mb-8 flex gap-4">
+            {
+              quoteTabs.map((tab) => (
+                <div class:list={['flex-1 rounded-lg bg-surface-container-low p-3 text-center', tab.active ? 'border-b-2 border-primary' : 'opacity-40']}>
+                  <span class="block text-[10px] font-bold uppercase text-zinc-400">{tab.label}</span>
+                  <span class="text-sm font-bold">{tab.count}</span>
+                </div>
+              ))
+            }
+          </div>
+          <div class="space-y-4">
+            {
+              quotes.map((quote) => (
+                <article class="flex items-center justify-between gap-4 rounded-xl border border-outline-variant bg-white p-4 shadow-sm">
+                  <div>
+                    <h3 class="text-sm font-bold">{quote.title}</h3>
+                    <p class="text-xs text-zinc-500">{quote.customer}</p>
+                  </div>
+                  <div class="text-right">
+                    <p class="text-sm font-bold text-secondary">{quote.value}</p>
+                    <span class="rounded bg-secondary-container/20 px-2 py-0.5 text-[9px] font-bold uppercase text-secondary">{quote.status}</span>
+                  </div>
+                </article>
+              ))
+            }
+          </div>
+        </div>
+        <div class="mt-4 rounded-2xl bg-primary p-6 text-white shadow-2xl sm:ml-auto sm:max-w-[260px] lg:absolute lg:-bottom-6 lg:-right-6 lg:mt-0">
+          <p class="mb-2 text-xs font-bold">AUTO-FOLLOW UP</p>
+          <p class="text-sm">"Hi Sarah, just checking if you had any questions about the bathroom quote?"</p>
+          <p class="mt-2 text-[10px] opacity-60">Sent via SMS - 10:00 AM</p>
+        </div>
+      </div>
+
+      <div class="order-1 lg:order-2">
+        <h2 class="mb-8 font-display text-display text-primary">Quotes should not disappear after you send them.</h2>
+        <p class="mb-8 text-body-lg text-on-surface-variant">
+          kgentik turns your "best guess" into a pipeline. We track when customers open your PDF, notify you when they're
+          browsing your portfolio, and follow up automatically if they don't reply within 48 hours.
+        </p>
+        <ul class="space-y-4">
+          {
+            features.map((feature) => (
+              <li class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-secondary">check_circle</span>
+                <span>{feature}</span>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,40 @@
+---
+const agents = [
+  { icon: 'person_search', name: 'Lead Agent', status: 'Active', color: 'bg-secondary-container text-primary', badge: 'bg-green-500/20 text-green-400', description: 'Qualifies new inquiries 24/7 across all channels.' },
+  { icon: 'calculate', name: 'Quote Agent', status: 'Drafting', color: 'bg-blue-500 text-white', badge: 'bg-blue-500/20 text-blue-400', description: 'Prepares estimates based on your pricing rules.' },
+  { icon: 'notifications_active', name: 'Follow-up Agent', status: 'Tracking', color: 'bg-amber-500 text-white', badge: 'bg-amber-500/20 text-amber-400', description: 'Chases unsigned quotes and dormant leads via SMS.' },
+  { icon: 'campaign', name: 'Marketing Agent', status: 'Planning', color: 'bg-purple-500 text-white', badge: 'bg-purple-500/20 text-purple-400', description: 'Drafts social content and manages Google Profile.' },
+  { icon: 'monetization_on', name: 'Paid Growth', status: 'Strategy', color: 'bg-red-500 text-white', badge: 'bg-white/10 text-white', description: 'Optimizes Local Service Ads and Meta campaigns.' },
+  { icon: 'trending_up', name: 'Organic Growth', status: 'Ranking', color: 'bg-indigo-500 text-white', badge: 'bg-white/10 text-white', description: 'Manages SEO and local citation building.' },
+  { icon: 'star', name: 'Review Agent', status: 'Automated', color: 'bg-pink-500 text-white', badge: 'bg-white/10 text-white', description: 'Collects feedback and pushes reviews to Google.' },
+  { icon: 'language', name: 'Website Agent', status: 'Live', color: 'bg-teal-500 text-white', badge: 'bg-white/10 text-white', description: 'Updates site content and captures visitor intent.' },
+];
+---
+
+<section class="section-y bg-primary-container text-white" id="features">
+  <div class="site-container">
+    <div class="mb-12 text-center sm:mb-16">
+      <span class="eyebrow mb-6 inline-block rounded-full bg-secondary-container/10 px-4 py-1.5 text-secondary-container">Meet the Agents</span>
+      <h2 class="mb-6 font-display text-display">Your small team of specialists.</h2>
+      <p class="mx-auto max-w-2xl text-body-lg text-on-primary-container">
+        Specialized AI agents trained on your business data, your tone, and your pricing.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      {
+        agents.map((agent) => (
+          <article class="rounded-2xl border border-white/10 bg-tertiary-container p-6">
+            <div class="mb-8 flex justify-between gap-4">
+              <div class:list={['flex h-10 w-10 items-center justify-center rounded-lg', agent.color]}>
+                <span class="material-symbols-outlined">{agent.icon}</span>
+              </div>
+              <span class:list={['h-fit rounded-full px-2 py-1 text-[9px] font-bold uppercase', agent.badge]}>{agent.status}</span>
+            </div>
+            <h3 class="mb-2 text-lg font-bold">{agent.name}</h3>
+            <p class="text-xs text-on-primary-container">{agent.description}</p>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

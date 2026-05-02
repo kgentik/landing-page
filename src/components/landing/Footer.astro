@@ -1,0 +1,48 @@
+---
+const productLinks = [
+  { label: 'Industries', href: '#industries' },
+  { label: 'Features', href: '#features' },
+  { label: 'Pricing', href: '#pricing' },
+  { label: 'Blog', href: '/blog' },
+];
+
+const supportLinks = [
+  { label: 'Help Center', href: '#' },
+  { label: 'Contact', href: '#' },
+  { label: 'Terms', href: '#' },
+];
+---
+
+<footer class="border-t border-outline-variant bg-surface py-12">
+  <div class="site-container grid grid-cols-1 gap-10 md:grid-cols-4 md:gap-12">
+    <div>
+      <a class="mb-4 block text-xl font-bold text-primary" href="/">kgentik</a>
+      <p class="text-sm text-on-surface-variant">
+        Human-first intelligence for the local businesses that keep the world running.
+      </p>
+    </div>
+    <div>
+      <h2 class="mb-6 text-xs font-bold uppercase tracking-widest text-primary">Product</h2>
+      <ul class="space-y-3 text-sm text-on-surface-variant">
+        {productLinks.map((link) => <li><a class="hover:text-primary" href={link.href}>{link.label}</a></li>)}
+      </ul>
+    </div>
+    <div>
+      <h2 class="mb-6 text-xs font-bold uppercase tracking-widest text-primary">Support</h2>
+      <ul class="space-y-3 text-sm text-on-surface-variant">
+        {supportLinks.map((link) => <li><a class="hover:text-primary" href={link.href}>{link.label}</a></li>)}
+      </ul>
+    </div>
+    <div>
+      <h2 class="mb-6 text-xs font-bold uppercase tracking-widest text-primary">Newsletter</h2>
+      <form class="flex" action="#" method="post">
+        <label class="sr-only" for="newsletter-email">Email address</label>
+        <input class="w-full rounded-l-lg border border-outline-variant bg-white px-4 py-2 focus:ring-0" id="newsletter-email" name="email" placeholder="Email" type="email" />
+        <button class="rounded-r-lg bg-primary-container px-4 py-2 font-bold text-white" type="submit">Join</button>
+      </form>
+    </div>
+  </div>
+  <div class="site-container mt-12 border-t border-outline-variant pt-12 text-center text-xs text-zinc-500">
+    © 2024 kgentik AI. The Operating System for Local Business.
+  </div>
+</footer>

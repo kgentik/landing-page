@@ -1,0 +1,57 @@
+---
+const signals = [
+  { icon: 'inbox', label: 'New Enquiry', value: 'Boiler Service Request', color: 'bg-blue-100 text-blue-600', className: 'lg:-top-6 lg:-left-6 animate-bounce-slow' },
+  { icon: 'request_quote', label: 'Quote Drafted', value: '$8,400 Total', color: 'bg-secondary-container/20 text-secondary', className: 'lg:top-1/4 lg:-right-8' },
+  { icon: 'history', label: 'Follow-up', value: 'Scheduled for Friday', color: 'bg-amber-100 text-amber-600', className: 'lg:bottom-1/4 lg:-left-10' },
+  { icon: 'reviews', label: 'Review Ready', value: '5-Star pending', color: 'bg-green-100 text-green-600', className: 'lg:-bottom-6 lg:right-10' },
+];
+---
+
+<section class="relative overflow-hidden bg-primary-container py-20 text-white sm:py-24 lg:py-32">
+  <div class="site-container grid grid-cols-1 items-center gap-14 lg:grid-cols-2 lg:gap-16">
+    <div class="relative z-10">
+      <span class="eyebrow mb-6 inline-block rounded-full bg-secondary-container/10 px-4 py-1.5 text-secondary-container">
+        Agentic Operating System
+      </span>
+      <h1 class="mb-6 max-w-3xl font-display text-display">Turn more local enquiries into booked jobs.</h1>
+      <p class="mb-10 max-w-xl text-body-lg text-on-primary-container">
+        The AI-first command center for trades and services. Automate lead capture, quote tracking, follow-ups, reviews,
+        and local marketing while you stay on the tools.
+      </p>
+      <div class="flex flex-col gap-4 sm:flex-row">
+        <a class="rounded-2xl bg-secondary-container px-8 py-4 text-center text-lg font-bold text-on-secondary-container transition-all hover:brightness-110" href="#pricing">
+          Book a free demo
+        </a>
+        <a class="rounded-2xl border border-on-primary-container px-8 py-4 text-center text-lg font-bold text-white transition-all hover:bg-white/5" href="#features">
+          See the OS in action
+        </a>
+      </div>
+    </div>
+
+    <div class="relative">
+      <div class="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-2xl sm:aspect-square">
+        <img
+          alt="Local business owner"
+          class="h-full w-full object-cover grayscale brightness-75"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuC19K2owbD4H9zkDH1y4uRP9rGaGfVYPi9eOaeO-zSVJ64sJadkgaBvfAUNVQ873yohhMPy-hy48BZbFNmFWdgbUJ3ZnE4jVoGeP5go83t_ZvEllqckTF-BeohAyCF8WOPXmGgZTZE4SV4a1YrYKO8H5rM2ES9CrzswOWV4gulqRgYoNv2Lz30kGRfwF0BxCby7KHPktqfRmg74XwPg8r2t6fQYfEOc0C3zdSFQdKmAIDoleT-E4qlR_yIQYhXbB-NENCnOf9AGjYUB"
+        />
+      </div>
+
+      <div class="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:mt-0 lg:block">
+        {
+          signals.map((signal) => (
+            <div class:list={['rounded-xl border border-outline-variant bg-white p-4 text-primary shadow-2xl lg:absolute lg:flex lg:items-center lg:gap-4', signal.className]}>
+              <div class:list={['mb-3 inline-flex rounded-lg p-2 lg:mb-0', signal.color]}>
+                <span class="material-symbols-outlined">{signal.icon}</span>
+              </div>
+              <div>
+                <p class="text-[10px] font-bold uppercase text-zinc-400">{signal.label}</p>
+                <p class="text-sm font-bold">{signal.value}</p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,41 @@
+---
+const steps = [
+  {
+    title: 'Lead In & Qualify',
+    description: 'Agent greets the lead on Google/SMS, asks for photos, and confirms service area.',
+  },
+  {
+    title: 'Quote Tracked',
+    description: "The Quote Agent drafts the estimate. kgentik tracks when it's viewed and ready for approval.",
+  },
+  {
+    title: 'Convert & Review',
+    description: "Job is done. Review Agent automatically texts the survey. Marketing Agent drafts a 'Before/After' post.",
+  },
+];
+---
+
+<section class="section-y bg-surface-container-low">
+  <div class="site-container">
+    <div class="mb-12 text-center sm:mb-16">
+      <h2 class="mb-4 font-display text-display text-primary">Every enquiry gets a clear next step.</h2>
+      <p class="mx-auto max-w-2xl text-body-lg text-on-surface-variant">
+        From the first "hello" to the final review, kgentik ensures no customer falls through the cracks.
+      </p>
+    </div>
+    <div class="relative flex flex-col items-stretch gap-6 md:flex-row">
+      <div class="absolute left-0 top-1/2 -z-10 hidden h-px w-full border-t border-dashed border-outline-variant md:block"></div>
+      {
+        steps.map((step, index) => (
+          <article class="relative flex-1 rounded-2xl border border-outline-variant bg-white p-8 text-center shadow-sm">
+            <div class="mx-auto mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-secondary-container text-xl font-bold text-on-secondary-container">
+              {index + 1}
+            </div>
+            <h3 class="mb-4 text-xl font-bold text-primary">{step.title}</h3>
+            <p class="text-sm text-on-surface-variant">{step.description}</p>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
