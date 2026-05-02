@@ -1,0 +1,133 @@
+---
+export const prerender = true;
+
+import Footer from '../components/landing/Footer.astro';
+import Header from '../components/landing/Header.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Terms of Service | kgentik"
+  description="Terms of Service for kgentik, including acceptable use, as-is service availability, disclaimers, and limitation of liability."
+>
+  <Header />
+  <main class="bg-surface">
+    <article class="section-y">
+      <div class="site-container max-w-3xl">
+        <header class="mb-10">
+          <p class="eyebrow mb-4 text-secondary">Legal</p>
+          <h1 class="mb-6 font-display text-display text-primary">Terms of Service</h1>
+          <p class="text-body-lg text-on-surface-variant">Last updated: May 2, 2026</p>
+        </header>
+
+        <div class="rounded-3xl border border-outline-variant bg-white p-6 shadow-sm sm:p-10">
+          <div class="prose prose-lg max-w-none prose-headings:font-display prose-headings:text-primary prose-a:text-secondary prose-strong:text-primary">
+            <p>
+              These Terms of Service govern your access to and use of kgentik websites, products, and services
+              (the "Service"). By using the Service, you agree to these terms. If you do not agree, do not use the
+              Service.
+            </p>
+
+            <h2>1. The Service</h2>
+            <p>
+              kgentik provides software, automation, AI-assisted workflows, and digital tools for businesses. The Service
+              may include lead handling, marketing support, quote follow-up, review workflows, website-related tools, and
+              related features.
+            </p>
+            <p>
+              The Service is provided for general business support only. You remain responsible for reviewing outputs,
+              making business decisions, communicating with customers, and complying with laws that apply to your business.
+            </p>
+
+            <h2>2. Accounts and Access</h2>
+            <p>
+              You are responsible for the information you provide, your account access, and any activity that occurs under
+              your account. You must not share access in a way that creates security, privacy, or misuse risks.
+            </p>
+
+            <h2>3. Acceptable Use</h2>
+            <p>You agree not to use the Service to:</p>
+            <ul>
+              <li>break any law or regulation;</li>
+              <li>send spam, deceptive messages, or unlawful marketing communications;</li>
+              <li>upload or process data you do not have the right to use;</li>
+              <li>interfere with the security, availability, or integrity of the Service;</li>
+              <li>reverse engineer, copy, resell, or misuse the Service except as permitted by us in writing.</li>
+            </ul>
+
+            <h2>4. AI and Automation Outputs</h2>
+            <p>
+              AI-generated content and automated recommendations may be incomplete, inaccurate, delayed, or unsuitable for
+              your circumstances. You are responsible for checking all outputs before relying on them or sending them to
+              customers.
+            </p>
+
+            <h2>5. Third-Party Services</h2>
+            <p>
+              The Service may connect to third-party platforms such as messaging tools, advertising platforms, analytics
+              providers, payment providers, customer management tools, or Google services. We are not responsible for
+              third-party services, their availability, their terms, or their handling of data.
+            </p>
+
+            <h2>6. Fees and Plans</h2>
+            <p>
+              Fees, plan limits, and billing terms may be shown on the website, in an order form, or in another written
+              agreement. Unless stated otherwise, fees are non-refundable to the maximum extent permitted by law.
+            </p>
+
+            <h2>7. Availability and Changes</h2>
+            <p>
+              We may change, suspend, or discontinue any part of the Service at any time. We do not guarantee uninterrupted
+              availability, error-free operation, specific results, increased sales, search rankings, leads, bookings, or
+              revenue.
+            </p>
+
+            <h2>8. Disclaimers</h2>
+            <p>
+              To the maximum extent permitted by law, the Service is provided "as is" and "as available" without warranties
+              of any kind, whether express, implied, or statutory. We disclaim warranties of merchantability, fitness for a
+              particular purpose, non-infringement, accuracy, reliability, and availability.
+            </p>
+
+            <h2>9. Limitation of Liability</h2>
+            <p>
+              To the maximum extent permitted by law, kgentik will not be liable for indirect, incidental, special,
+              consequential, exemplary, or punitive damages, or for lost profits, lost revenue, lost data, lost goodwill, or
+              business interruption.
+            </p>
+            <p>
+              To the maximum extent permitted by law, our total liability for any claim relating to the Service is limited
+              to the amount you paid to us for the Service in the one month before the event giving rise to the claim, or
+              AUD $100 if you have not paid us.
+            </p>
+
+            <h2>10. Indemnity</h2>
+            <p>
+              You agree to indemnify and hold kgentik harmless from claims, losses, damages, liabilities, and expenses
+              arising from your use of the Service, your content or data, your breach of these terms, or your violation of
+              law or third-party rights.
+            </p>
+
+            <h2>11. Termination</h2>
+            <p>
+              We may suspend or terminate access to the Service at any time if we believe you have breached these terms,
+              created risk for us or others, or used the Service in a way we consider inappropriate.
+            </p>
+
+            <h2>12. Governing Law</h2>
+            <p>
+              These terms are governed by the laws of New South Wales, Australia, unless another jurisdiction is required by
+              applicable law.
+            </p>
+
+            <h2>13. Contact</h2>
+            <p>
+              Questions about these terms can be sent through the contact options available on the kgentik website.
+            </p>
+          </div>
+        </div>
+      </div>
+    </article>
+  </main>
+  <Footer />
+</BaseLayout>
